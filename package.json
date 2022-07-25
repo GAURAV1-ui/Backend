@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/GAURAV1-ui/Backend/issues"
   },
-  "homepage": "https://github.com/GAURAV1-ui/Backend#readme"
+  "homepage": "https://github.com/GAURAV1-ui/Backend#readme",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  }
 }
