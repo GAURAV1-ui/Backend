@@ -4,14 +4,19 @@ const getDb = require('../util/database').getDb;
 const ObjectId = mongodb.ObjectId;
 
 class User {
-  constructor(username, email) {
+  constructor(username, email, cart) {
     this.name = username;
     this.email = email;
+    this.cart = cart;
   }
 
   save() {
     const db = getDb();
     return db.collection('users').insertOne(this);
+  }
+
+  addToCart(product) {
+
   }
 
   static findById(userId) {
