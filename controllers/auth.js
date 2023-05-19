@@ -8,7 +8,7 @@ const transporter = nodemailer.createTransport(
   sendgridTransport({
     auth: {
       api_key:
-        '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'
+        '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'
     }
   })
 );
@@ -117,5 +117,19 @@ exports.postLogout = (req, res, next) => {
   req.session.destroy(err => {
     console.log(err);
     res.redirect('/');
+  });
+};
+
+exports.getReset = (req, res, next) => {
+  let message = req.flash('error');
+  if (message.length > 0) {
+    message = message[0];
+  } else {
+    message = null;
+  }
+  res.render('auth/reset', {
+    path: '/reset',
+    pageTitle: 'Reset Password',
+    errorMessage: message
   });
 };
